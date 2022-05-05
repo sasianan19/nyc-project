@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York City Guide</title>
+    <style>
+        h1{
+            color: royalblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-size: 40px;
+        }
+        p{
+            color: royalblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-size: 20px;
+        }
+        ul{
+            text-align: center;
+            list-style-position: inside;
+            font-size: 20px;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200;
+}
+    </style>
+</head>
+<body>
+<h1>New York City Guide</h1>
+<p>
+    Wondering about fun activities to do in the big city? Check out this
+    directory of activities in each borough!
+</p>
+
+<ul>
+    {% for borough in boroughs %}
+    <li><a href="{% url 'borough' borough %}">{{ borough|title }}</a></li>
+    {% endfor %}
+</ul>
+<img src="https://a.cdn-hotels.com/gdcs/production138/d1142/08366677-a8d0-4979-84d5-b54f93ca00e5.jpg?impolicy=fcrop&w=800&h=533&q=medium" alt="newyorkcity" width = 500 class="center">
+</body>
