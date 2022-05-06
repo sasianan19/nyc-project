@@ -34,14 +34,8 @@
 <body>
 <h1>{{ venue | title }}</h1>
 
-<!-- this list the different venues within the venues view by looping through and printing each venue within that actvitiy, and takes the user to the a page that describes that venue-->
-<ul>
-    {% for venue in venues %}
-    <li>
-        <a href="{% url 'venue' activity venue %} "
-            >{{ venue|title }}</a
-        >
-    </li>
-    {% endfor %}
-</ul>
+<!-- This p tag has Django scripting that is calling the description of the venue from the VenueView.  -->
+
+<p> {{ description }} </p>
+
 
