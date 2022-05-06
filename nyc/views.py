@@ -8,7 +8,7 @@ class CityView(View):
     def get(self, request):
         return render(request=request, template_name='city.html', context={'boroughs': boroughs.keys()})
 
-
+#this view shows the different boroughs of New York City
 class BoroughView(View):
     def get(self, request, borough):
         return render(
@@ -17,7 +17,7 @@ class BoroughView(View):
             context={'borough': borough, 'activities': boroughs[borough].keys()},
         )
 
-
+#this view lists the different activities you could do in the borough
 class ActivityView(View):
     def get(self, request, borough, activity):
         return render(
@@ -27,7 +27,7 @@ class ActivityView(View):
         )
     
 
-
+#this view lists the different venues in which the user can participate in the activity
 class VenueView(View):
     def get(self, request, borough, activity, venue):
         return render(
